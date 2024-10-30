@@ -9,21 +9,16 @@ const serverID = process.env.SERVER_ID;
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // Array of image file paths for icons
-const icons = ['images/animekun_blue.gif', 'images/dewali_animekun.gif', 'images/snow_animekun.gif']; // Add paths to your images here
+const icons = ['images/animekun_blue.gif', 'images/dewali_animekun.gif', 'images/snow_animekun.gif'];
 let currentIndex = 0;
 
 // Function to change server icon
 async function changeIcon() {
     const guild = client.guilds.cache.get(serverID);
-    if (!guild) {
-      return console.log('Server not found.');
-      
-    } else {
-      console.log('server found')
-    }
+    if (!guild) return console.log('Server not found.');
 
     try {
-        console.log('changing the icon!')
+        
         await guild.setIcon(fs.readFileSync(icons[currentIndex]));
         console.log(`Changed icon to ${icons[currentIndex]}`);
         currentIndex = (currentIndex + 1) % icons.length; // Cycle through images
