@@ -124,6 +124,21 @@ client.once('ready', () => {
     setInterval(changeStatus, botStatusChangeTime * 60 * 1000);
 });
 
+
+
+client.on('messageCreate', async message => {
+  if (message.author.bot) return;  // Ignore messages from bots
+
+  // Ping command
+  if (message.content === '!ping') {
+    const ping = Date.now() - message.createdTimestamp;
+    const apiPing = Math.round(client.ws.ping);
+    await message.reply(`Pong! 🏓\nServer Latency: ${ping}ms\nAPI Latency: ${apiPing}ms`);
+  }
+});
+
+
+
 // Log in to Discord
 client.login(TOKEN);
 
