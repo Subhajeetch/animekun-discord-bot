@@ -2,12 +2,14 @@ const express = require('express');
 const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 require('dotenv').config();
 const fs = require('fs');
-const TOKEN = process.env.TOKEN;
-const serverID = process.env.SERVER_ID;
-const PORT = process.env.PORT;
+const TOKEN = process.env.TOKEN; //bot token
+const serverID = process.env.SERVER_ID; // server id
+const PORT = process.env.PORT; // random port (if you deploying on a server);
 
-// Create a new client instance
+
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
 
 const app = express();
 
