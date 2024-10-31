@@ -53,15 +53,10 @@ async function changeIcon() {
     const guild = client.guilds.cache.get(serverID);
     if (!guild) return console.log('Server not found.');
     
-    const logChannel = guild.channels.cache.get('1262339592393330708');
-    if (!logChannel) return console.log('Log channel not found.');
-
+    
     try {
         
         await guild.setIcon(fs.readFileSync(icons[currentIndex]));
-        
-        const message = `Changed icon to ${icons[currentIndex]}`;
-        await logChannel.send(message);
         
         currentIndex = (currentIndex + 1) % icons.length;
     } catch (error) {
