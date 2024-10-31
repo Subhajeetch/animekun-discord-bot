@@ -4,14 +4,6 @@ require('dotenv').config();
 const fs = require('fs');
 
 
-// you can change the values below!
-
-const TOKEN = process.env.TOKEN; //bot token
-const serverID = process.env.SERVER_ID; // server id
-const PORT = process.env.PORT; // random port (if you deploying on a server);
-// don't change below this!
-
-
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -29,6 +21,12 @@ app.get('/', async (req, res) => {
 
 
 // you can change the values below
+
+const TOKEN = process.env.TOKEN; //bot token
+const serverID = process.env.SERVER_ID; // server id
+const PORT = process.env.PORT; // random port (eg1000) (if you deploying on a server);
+
+
 const icons = [
   'images/animekun_blue.gif',
   'images/dewali_animekun.gif',
