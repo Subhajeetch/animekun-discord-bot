@@ -11,6 +11,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const app = express();
 
+app.get('/', async (req, res) => {
+  return res.send('Bot Alive');
+})
+
+
+
 // Array of image file paths for icons
 const icons = [
   'images/animekun_blue.gif',
@@ -19,10 +25,24 @@ const icons = [
   'images/animekun_green.gif'
   ];
 
+const avatars = [
+  'images/animekun_blue.gif',
+  'images/dewali_animekun.gif',
+  'images/snow_animekun.gif',
+  'images/animekun_green.gif'
+  ];
 
-app.get('/', async (req, res) => {
-  return res.send('Bot Alive');
-})
+
+const statuses = [
+    { name: 'You Pooping', type: ActivityType.Watching },
+    { name: 'to your Nonsense', type: ActivityType.Listening },
+    { name: 'with your Heart', type: ActivityType.Playing },
+    { name: 'Animekun.lol', type: ActivityType.Watching },
+];
+
+
+
+
 
 
 
@@ -47,11 +67,43 @@ async function changeIcon() {
     } catch (error) {
         console.error('Failed to change icon:', error);
     }
-}
+};
+
+
+
+
+let currentAvatarIndex = 0;
+
+// function to change the bot pfp
+async function changeBotAvatar() {
+
+    try {
+        await client.user.setAvatar(fs.readFileSync(avatars[currentAvatarIndex]));
+        currentAvatarIndex = (currentAvatarIndex + 1) % avatars.length;
+    } catch (error) {
+        console.error('Failed to change bot avatar:', error);
+    }
+};
+
+
+
+let currentStatusIndex = 0;
+
+// function to change the bot status
+function changeStatus() {
+    const status = statuses[currentStatusIndex];
+    client.user.setActivity(status.name, { type: status.type });
+    currentStatusIndex = (currentStatusIndex + 1) % statuses.length;
+};
+
+
+
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     setInterval(changeIcon, 5 * 60 * 1000);
+    setInterval(changeBotAvatar, 5 * 60 * 1000);
+    setInterval(changeStatus, 1 * 60 * 1000);
 });
 
 // Log in to Discord
