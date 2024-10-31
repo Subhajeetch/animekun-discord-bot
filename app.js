@@ -1,18 +1,23 @@
+const express = require('express');
 const { Client, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
 const fs = require('fs');
 const TOKEN = process.env.TOKEN;
 const serverID = process.env.SERVER_ID;
+const PORT = process.env.PORT;
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+const app = express();
 
 // Array of image file paths for icons
 const icons = ['images/animekun_blue.gif', 'images/dewali_animekun.gif', 'images/snow_animekun.gif'];
 
 
-
+app.get('/', async (req, res) => {
+  return res.send('Bot Alive');
+})
 
 
 
@@ -41,8 +46,11 @@ async function changeIcon() {
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    setInterval(changeIcon, 1 * 60 * 1000);
+    setInterval(changeIcon, 5 * 60 * 1000);
 });
 
 // Log in to Discord
 client.login(TOKEN);
+
+// node server start
+app.listen(PORT, () => console.log("Server Started!"));
