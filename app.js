@@ -13,11 +13,7 @@ const PORT = process.env.PORT; // random port (if you deploying on a server);
 
 
 
-
-
-
-
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 
 const app = express();
