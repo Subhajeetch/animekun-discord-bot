@@ -1,5 +1,5 @@
 const express = require('express');
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 require('dotenv').config();
 const fs = require('fs');
 const TOKEN = process.env.TOKEN;
@@ -35,7 +35,7 @@ const avatars = [
 
 const statuses = [
     { name: 'You Pooping', type: ActivityType.Watching },
-    { name: 'to your Nonsense', type: ActivityType.Listening },
+    { name: 'your Nonsense', type: ActivityType.Listening },
     { name: 'with your Heart', type: ActivityType.Playing },
     { name: 'Animekun.lol', type: ActivityType.Watching },
 ];
