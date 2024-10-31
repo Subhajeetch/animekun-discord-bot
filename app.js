@@ -12,7 +12,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const app = express();
 
 // Array of image file paths for icons
-const icons = ['images/animekun_blue.gif', 'images/dewali_animekun.gif', 'images/snow_animekun.gif'];
+const icons = [
+  'images/animekun_blue.gif',
+  'images/dewali_animekun.gif',
+  'images/snow_animekun.gif',
+  'images/animekun_green.gif'
+  ];
 
 
 app.get('/', async (req, res) => {
