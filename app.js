@@ -29,16 +29,26 @@ const PORT = process.env.PORT; // random port (eg1000) (if you deploying on a se
 
 const icons = [
   'images/animekun_blue.gif',
-  'images/dewali_animekun.gif',
-  'images/snow_animekun.gif',
-  'images/animekun_green.gif'
+  'images/picture_1.jpg',
+  'images/picture_2.jpg',
+  'images/picture_3.jpg',
+  'images/picture_4.jpg',
+  'images/picture_5.jpg',
+  'images/picture_6.jpg',
+  'images/picture_7.jpg',
+  'images/picture_8.jpg',
   ]; //USE YOUR OWN PICTURES
 
 const avatars = [
   'images/animekun_blue.gif',
-  'images/dewali_animekun.gif',
-  'images/snow_animekun.gif',
-  'images/animekun_green.gif'
+  'images/picture_1.jpg',
+  'images/picture_2.jpg',
+  'images/picture_3.jpg',
+  'images/picture_4.jpg',
+  'images/picture_5.jpg',
+  'images/picture_6.jpg',
+  'images/picture_7.jpg',
+  'images/picture_8.jpg',
   ]; //USE YOUR OWN PICTURES
 
 
