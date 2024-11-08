@@ -68,7 +68,7 @@ const botStatusChangeTime = 1; //number (in minutes)
 
 
 
-
+/*
 
 
 
@@ -90,7 +90,7 @@ async function changeIcon() {
     }
 };
 
-
+*/
 
 
 let currentAvatarIndex = 0;
@@ -123,7 +123,7 @@ function changeStatus() {
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     
-    setInterval(changeIcon, serverIconChangeTime * 60 * 1000);
+    //setInterval(changeIcon, serverIconChangeTime * 60 * 1000);
     setInterval(changeBotAvatar, botIconChangeTime * 60 * 1000);
     setInterval(changeStatus, botStatusChangeTime * 60 * 1000);
 });
