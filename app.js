@@ -79,7 +79,7 @@ const statuses = [
   { name: 'with broken hearts', type: ActivityType.Playing },
   { name: 'you overthink everything', type: ActivityType.Watching },
   { name: 'endless excuses', type: ActivityType.Listening },
-  { name: 'borrowed time', type: ActivityType.Playing },
+  { name: 'on borrowed time', type: ActivityType.Playing },
   { name: 'you complain', type: ActivityType.Listening },
   { name: 'you lose control', type: ActivityType.Watching },
   { name: 'bad advice', type: ActivityType.Listening },
